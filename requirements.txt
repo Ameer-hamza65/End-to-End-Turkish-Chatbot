@@ -1,0 +1,17 @@
+python-dotenv
+streamlit
+langchain-community
+langchain-text-splitters
+langchain-groq
+unstructured
+unstructured[pdf]
+transformers
+sentence-transformers
+nltk
+PyPDF2
+faiss-cpu 
+groq
+huggingface-hub
+
+
+-e .
