@@ -21,13 +21,16 @@ def icon(emoji: str):
     )
     
     
-logo = st.sidebar.image(r"C:\Users\Hamza\Desktop\New folder\1.png", width=200)
+# logo = st.sidebar.image(r"C:\Users\Hamza\Desktop\New folder\1.png", width=200)
 
 
 st.subheader("Tahlil: Yapay Zeka Asistanı", divider="rainbow", anchor=False)
 
 # Initialize the Groq client with your API key
-client = Groq(api_key="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")
+
+GROQ_API_KEY=st.secrets['GROQ_ACCESS_TOKEN']
+
+client = Groq(api_key=GROQ_API_KEY)
 
 # Initialize chat history, selected model, and feedback
 if "messages" not in st.session_state:
@@ -49,7 +52,10 @@ models = {
     "llama3-70b-8192": {"name": "LLaMA3-70b-8192", "tokens": 8192, "developer": "Meta"},
     "llama3-8b-8192": {"name": "LLaMA3-8b-8192", "tokens": 8192, "developer": "Meta"},
     "mixtral-8x7b-32768": {"name": "Mixtral-8x7b-Instruct-v0.1", "tokens": 32768, "developer": "Mistral"},
+    "llama-3.1-70b-versatile": {"name": "LLaMA-3.1-70b-versatile", "tokens": 8192, "developer": "Meta"},
+    "llama-3.1-8b-instant": {"name": "LLaMA-3.1-8b-instant", "tokens": 8192, "developer": "Meta"}
 }
+
 
 # Sidebar for PDF uploader and model selection
 with st.sidebar:
